@@ -1,14 +1,15 @@
 const http = require('http');
 const app = require('./app');
+const cors = require("cors");
+app.use(cors()); // Use the router for any request to the /api/auth URL
+
 
 app.set('port', process.env.PORT || 3000); // set the port to 3000 or the environment port
-const serverjs = http.createServer(app);
-
-serverjs.listen(process.env.PORT || 3000);
 
 
 
-/*
+
+
 const normalizePort = val => {
   const port = parseInt(val, 10);
 
@@ -20,7 +21,7 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT ||'3000');
 app.set('port', port);
 
 const errorHandler = error => {
@@ -51,6 +52,4 @@ server.on('listening', () => {
   const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
   console.log('Listening on ' + bind);
 });
-server.listen(port);
-
-*/
+server.listen(port); // listen on port 3000
