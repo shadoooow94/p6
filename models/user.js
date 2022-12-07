@@ -1,6 +1,7 @@
- const mongoose = require('mongoose');
+ const mongoose = require('mongoose');//import package mongoose
 
  const uniqueValidator = require('mongoose-unique-validator');
+ // import du package pour verifer que l'on ne peux créé qu'un seul compte avec le meme mail 
 
 
  const userSchema = mongoose.Schema({ /* Schema for the user model */

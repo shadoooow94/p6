@@ -1,8 +1,7 @@
-const http = require('http');
-const app = require('./app');
-const cors = require("cors");
+const http = require('http'); // Import http
+const app = require('./app'); /* importation du fichier app.js */
+const cors = require("cors"); // Import cors
 app.use(cors()); // Use the router for any request to the /api/auth URL
-
 
 app.set('port', process.env.PORT || 3000); // set the port to 3000 or the environment port
 
