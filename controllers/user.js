@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const User= require('../models/user'); // Import the user model
 //variable d'envirronnement contenant le token 
-const TOKEN= process.env.TOKEN;
+const TOKEN= process.env.TOKEN; //'RANDOM TOKEN SECRET'
 
 
 exports.signup = (req, res, next) => {
@@ -36,7 +36,7 @@ exports.signup = (req, res, next) => {
                         userId: user._id,
                         token: jwt.sign(
                             { userId: user._id },
-                            TOKEN,  
+                            process.env.TOKEN,  
                             { expiresIn: '24h' })
                     });
                 })

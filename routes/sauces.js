@@ -6,7 +6,7 @@ const multer = require('../middleware/multer-config'); // Import the multer-conf
 
   
 
-const stuffCtrl = require('../controllers/stuff'); // Import the controller
+const stuffCtrl = require('../controllers/sauces'); // Import the controller
 
 
 

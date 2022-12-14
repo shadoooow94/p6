@@ -1,7 +1,8 @@
 const Sauces = require('../models/sauces'); // Import the model
 const fs = require('fs'); // Import fs
  
-
+ 
+ 
 
 
 
@@ -46,7 +47,8 @@ exports.modifysauces = (req, res, next) => {
 
       
     }) 
-  } else {
+  }
+   else {
     res.status(401).json({ error: "vous n'avez pas le droit de modifier cette sauce" });
   }
 })
@@ -62,6 +64,7 @@ exports.deleteSauces = (req, res, next) => {
         Sauces.deleteOne({_id: req.params.id})
         .then(() => res.status(200).json({message: 'la sauce à été supprimé ! '}))
         .catch((error) => res.status(400).json({error}));
+        
       })}
       
           })

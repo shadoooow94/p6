@@ -3,7 +3,7 @@ const express = require('express'); // Import express
 const mongoose = require('mongoose');
 const app = express(); // express is a function that returns an object
 
-const stuffRoutes = require('./routes/stuff');
+const stuffRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
 const path = require('path');
 const {get} = require('http');
@@ -33,7 +33,7 @@ const connectLimiter = rateLimiter({
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://guillaume:XJqU8JLezqLzf5dz@cluster0.iqeec8x.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://guillaume:jmiDLgBPzdIIExa4@cluster0.5997jpa.mongodb.net/?retryWrites=true&w=majority',
 /* mangoose.connect() is a function that returns a promise */
 // Connect to the database
     {
@@ -60,7 +60,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 // mise en place du pare-feu helmet pour la protection des données sensibles 
 app.use(helmet());  
 app.use(helmet.crossOriginResourcePolicy({policy: 'same-site'}))
-app.use(morgan("dev"));
+
 
 
 module.exports = app; // export the app object to use in other files
